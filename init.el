@@ -18,7 +18,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (flycheck lsp-ui company-lsp yasnippet lsp-mode smart-tabs-mode monokai-theme molokai-theme evil ivy use-package smex))))
+    (flycheck lsp-ui company-lsp yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -33,6 +33,10 @@
 
 ;;; Code:
 (setq-default indent-tabs-mode nil)
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
 
 (require 'monokai-theme)
 (use-package smex

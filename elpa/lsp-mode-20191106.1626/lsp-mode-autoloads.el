@@ -1,54 +1,10 @@
 ;;; lsp-mode-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
-
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "lsp-clients" "lsp-clients.el" (0 0 0 0))
-;;; Generated autoloads from lsp-clients.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-clients" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-clojure" "lsp-clojure.el" (0 0 0 0))
-;;; Generated autoloads from lsp-clojure.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-clojure" '("lsp-cl")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-css" "lsp-css.el" (0 0 0 0))
-;;; Generated autoloads from lsp-css.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-css" '("lsp-c")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-dart" "lsp-dart.el" (0 0 0 0))
-;;; Generated autoloads from lsp-dart.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-dart" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-elm" "lsp-elm.el" (0 0 0 0))
-;;; Generated autoloads from lsp-elm.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-elm" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-erlang" "lsp-erlang.el" (0 0 0 0))
-;;; Generated autoloads from lsp-erlang.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-erlang" '("lsp-erlang-server-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-fsharp" "lsp-fsharp.el" (0 0 0 0))
+;;;### (autoloads nil "lsp-fsharp" "lsp-fsharp.el" (24085 31817 501797
+;;;;;;  251000))
 ;;; Generated autoloads from lsp-fsharp.el
 
 (autoload 'lsp-fsharp--workspace-load "lsp-fsharp" "\
@@ -56,47 +12,10 @@ Load all of the provided PROJECTS.
 
 \(fn PROJECTS)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-fsharp" '("lsp-fsharp-")))
-
 ;;;***
 
-;;;### (autoloads nil "lsp-go" "lsp-go.el" (0 0 0 0))
-;;; Generated autoloads from lsp-go.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-go" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-haxe" "lsp-haxe.el" (0 0 0 0))
-;;; Generated autoloads from lsp-haxe.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-haxe" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-html" "lsp-html.el" (0 0 0 0))
-;;; Generated autoloads from lsp-html.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-html" '("lsp-html-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-intelephense" "lsp-intelephense.el" (0
-;;;;;;  0 0 0))
-;;; Generated autoloads from lsp-intelephense.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-intelephense" '("lsp-intelephense-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-metals" "lsp-metals.el" (0 0 0 0))
-;;; Generated autoloads from lsp-metals.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-metals" '("lsp-metals-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-mode" "lsp-mode.el" (0 0 0 0))
+;;;### (autoloads nil "lsp-mode" "lsp-mode.el" (24085 31817 501797
+;;;;;;  251000))
 ;;; Generated autoloads from lsp-mode.el
 (put 'lsp-enable-file-watchers 'safe-local-variable #'booleanp)
 (put 'lsp-file-watch-threshold 'safe-local-variable (lambda (i) (or (numberp i) (not i))))
@@ -118,68 +37,14 @@ This avoids overloading the server with many files when starting Emacs.
 
 \(fn)" nil nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-mode" '("lsp-" "make-lsp-client" "with-lsp-workspace" "when-lsp-workspace")))
-
 ;;;***
 
-;;;### (autoloads nil "lsp-pyls" "lsp-pyls.el" (0 0 0 0))
-;;; Generated autoloads from lsp-pyls.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-pyls" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-rust" "lsp-rust.el" (0 0 0 0))
-;;; Generated autoloads from lsp-rust.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-rust" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-solargraph" "lsp-solargraph.el" (0 0 0
-;;;;;;  0))
-;;; Generated autoloads from lsp-solargraph.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-solargraph" '("lsp-solargraph-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-terraform" "lsp-terraform.el" (0 0 0 0))
-;;; Generated autoloads from lsp-terraform.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-terraform" '("lsp-terraform-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-vetur" "lsp-vetur.el" (0 0 0 0))
-;;; Generated autoloads from lsp-vetur.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-vetur" '("lsp-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-vhdl" "lsp-vhdl.el" (0 0 0 0))
-;;; Generated autoloads from lsp-vhdl.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-vhdl" '("lsp-vhdl-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-xml" "lsp-xml.el" (0 0 0 0))
-;;; Generated autoloads from lsp-xml.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-xml" '("lsp-xml-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-yaml" "lsp-yaml.el" (0 0 0 0))
-;;; Generated autoloads from lsp-yaml.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-yaml" '("lsp-yaml-")))
-
-;;;***
-
-;;;### (autoloads nil nil ("lsp-mode-pkg.el" "lsp.el") (0 0 0 0))
+;;;### (autoloads nil nil ("lsp-clients.el" "lsp-clojure.el" "lsp-css.el"
+;;;;;;  "lsp-dart.el" "lsp-elm.el" "lsp-erlang.el" "lsp-go.el" "lsp-haxe.el"
+;;;;;;  "lsp-html.el" "lsp-intelephense.el" "lsp-metals.el" "lsp-mode-pkg.el"
+;;;;;;  "lsp-pyls.el" "lsp-rust.el" "lsp-solargraph.el" "lsp-terraform.el"
+;;;;;;  "lsp-vetur.el" "lsp-vhdl.el" "lsp-xml.el" "lsp-yaml.el" "lsp.el")
+;;;;;;  (24085 31817 505797 313000))
 
 ;;;***
 
@@ -187,6 +52,5 @@ This avoids overloading the server with many files when starting Emacs.
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; lsp-mode-autoloads.el ends here

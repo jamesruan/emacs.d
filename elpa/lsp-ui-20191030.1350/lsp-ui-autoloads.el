@@ -1,12 +1,9 @@
 ;;; lsp-ui-autoloads.el --- automatically extracted autoloads
 ;;
 ;;; Code:
-
-(add-to-list 'load-path (directory-file-name
-                         (or (file-name-directory #$) (car load-path))))
-
+(add-to-list 'load-path (directory-file-name (or (file-name-directory #$) (car load-path))))
 
-;;;### (autoloads nil "lsp-ui" "lsp-ui.el" (0 0 0 0))
+;;;### (autoloads nil "lsp-ui" "lsp-ui.el" (24085 31952 346463 916000))
 ;;; Generated autoloads from lsp-ui.el
 
 (autoload 'lsp-ui-mode "lsp-ui" "\
@@ -19,48 +16,11 @@ omitted or nil, and toggle it if ARG is ‘toggle’.
 
 \(fn &optional ARG)" t nil)
 
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui" '("lsp-ui-")))
-
 ;;;***
 
-;;;### (autoloads nil "lsp-ui-doc" "lsp-ui-doc.el" (0 0 0 0))
-;;; Generated autoloads from lsp-ui-doc.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui-doc" '("lsp-ui-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-ui-flycheck" "lsp-ui-flycheck.el" (0 0
-;;;;;;  0 0))
-;;; Generated autoloads from lsp-ui-flycheck.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui-flycheck" '("lsp-ui-flycheck-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-ui-imenu" "lsp-ui-imenu.el" (0 0 0 0))
-;;; Generated autoloads from lsp-ui-imenu.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui-imenu" '("lsp-ui-imenu")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-ui-peek" "lsp-ui-peek.el" (0 0 0 0))
-;;; Generated autoloads from lsp-ui-peek.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui-peek" '("lsp-ui-peek-")))
-
-;;;***
-
-;;;### (autoloads nil "lsp-ui-sideline" "lsp-ui-sideline.el" (0 0
-;;;;;;  0 0))
-;;; Generated autoloads from lsp-ui-sideline.el
-
-(if (fboundp 'register-definition-prefixes) (register-definition-prefixes "lsp-ui-sideline" '("lsp-ui-sideline")))
-
-;;;***
-
-;;;### (autoloads nil nil ("lsp-ui-pkg.el") (0 0 0 0))
+;;;### (autoloads nil nil ("lsp-ui-doc.el" "lsp-ui-flycheck.el" "lsp-ui-imenu.el"
+;;;;;;  "lsp-ui-peek.el" "lsp-ui-pkg.el" "lsp-ui-sideline.el") (24085
+;;;;;;  31952 346463 916000))
 
 ;;;***
 
@@ -68,6 +28,5 @@ omitted or nil, and toggle it if ARG is ‘toggle’.
 ;; version-control: never
 ;; no-byte-compile: t
 ;; no-update-autoloads: t
-;; coding: utf-8
 ;; End:
 ;;; lsp-ui-autoloads.el ends here
