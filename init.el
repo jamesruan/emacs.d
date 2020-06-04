@@ -1,6 +1,6 @@
 ;;; package --- summary
-(setq package-archives '(("gnu"   . "http://mirrors.zju.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.zju.edu.cn/elpa/melpa/")))
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
 (package-initialize) ;; You might already have this line
 ;;; Commentary:
 (custom-set-variables
@@ -11,14 +11,14 @@
  '(custom-enabled-themes (quote (monokai)))
  '(custom-safe-themes
    (quote
-    ("a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default)))
+    ("f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default)))
  '(electric-indent-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (flycheck lsp-ui company-lsp yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
+    (go-mode flycheck lsp-ui company-lsp yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -50,8 +50,10 @@
 (use-package flycheck
  :config (global-flycheck-mode))
 (use-package lsp-mode
-  :commands lsp
+  :commands (lsp lsp-deferred)
   :init (setq lsp-prefer-flymake nil)
-  :hook js-mode)
+  :hook (go-mode . lsp-deferred)
+  :hook (js-mode . lsp)
+  :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
 
 ;;; init ends here
