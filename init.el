@@ -18,7 +18,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (go-mode flycheck lsp-ui company-lsp yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
+    (go-mode flycheck lsp-ui company yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -52,6 +52,7 @@
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init (setq lsp-prefer-flymake nil)
+  :config (yas-minor-mode)
   :hook (go-mode . lsp-deferred)
   :hook (js-mode . lsp)
   :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
