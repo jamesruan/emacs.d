@@ -8,17 +8,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (monokai)))
+ '(custom-enabled-themes '(monokai))
  '(custom-safe-themes
-   (quote
-    ("f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default)))
+   '("d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default))
  '(electric-indent-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
-   (quote
-    (go-mode flycheck lsp-ui company yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex))))
+   '(go-mode flycheck lsp-ui company yasnippet lsp-mode monokai-theme molokai-theme evil ivy use-package smex)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -49,10 +47,11 @@
  :config (ivy-mode 1))
 (use-package flycheck
  :config (global-flycheck-mode))
+(use-package yasnippet
+  :hook (prog-mode . yas-minor-mode-on))
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init (setq lsp-prefer-flymake nil)
-  :config (yas-minor-mode)
   :hook (go-mode . lsp-deferred)
   :hook (js-mode . lsp)
   :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
