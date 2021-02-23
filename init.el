@@ -49,10 +49,11 @@
  :config (ivy-mode 1))
 (use-package flycheck
  :config (global-flycheck-mode))
+(use-package yasnippet
+  :hook (prog-mode . yas-minor-mode-on))
 (use-package lsp-mode
   :commands (lsp lsp-deferred)
   :init (setq lsp-prefer-flymake nil)
-  :config (yas-minor-mode)
   :hook (go-mode . lsp-deferred)
   :hook (js-mode . lsp)
   :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
