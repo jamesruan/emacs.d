@@ -78,7 +78,7 @@
 
 (use-package lsp-mode
   :custom (setq rustic-lsp-server 'rust-analyzer)
-  :init (setq lsp-clients-clangd-args '("--header-insertion-decorators=0" "--enable-config" "--malloc-trim"))
+  :init (setq lsp-clients-clangd-args '("--header-insertion-decorators=0" "--enable-config"))
   :init (setq lsp-keymap-prefix "C-c l")
   :hook (
    (go-mode . lsp-deferred)
