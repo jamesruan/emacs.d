@@ -32,7 +32,7 @@
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
-   '(monokai-theme counsel bazel company-lua lua-mode rustic protobuf-mode magit go-mode flycheck lsp-ui company yasnippet lsp-mode evil use-package which-key)))
+   '(compat go-mode lsp-origami origami monokai-theme counsel bazel company-lua lua-mode rustic protobuf-mode flycheck lsp-ui company yasnippet lsp-mode evil use-package which-key)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -86,6 +86,10 @@
    (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferred)
   :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
+
+(use-package origami)
+(use-package lsp-origami
+  :hook (lsp-mode . lsp-origami-try-enable))
 
 (use-package lsp-ui
   :commands lsp-ui-mode)
