@@ -26,19 +26,19 @@
  '(column-number-mode t)
  '(custom-enabled-themes '(monokai))
  '(custom-safe-themes
-   '("78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default))
+   '("8dbbcb2b7ea7e7466ef575b60a92078359ac260c91fe908685b3983ab8e20e3f" "78e6be576f4a526d212d5f9a8798e5706990216e9be10174e3f3b015b8662e27" "d9646b131c4aa37f01f909fbdd5a9099389518eb68f25277ed19ba99adeb7279" "f3ab34b145c3b2a0f3a570ddff8fabb92dafc7679ac19444c31058ac305275e1" "a2cde79e4cc8dc9a03e7d9a42fabf8928720d420034b66aecc5b665bbf05d4e9" default))
  '(electric-indent-mode t)
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(js-indent-level 2)
  '(package-selected-packages
-   '(compat go-mode lsp-origami origami monokai-theme counsel bazel company-lua lua-mode rustic protobuf-mode flycheck lsp-ui company yasnippet lsp-mode evil use-package which-key)))
+   '(elysium markdown-mode gptel compat go-mode monokai-theme counsel rustic protobuf-mode company yasnippet evil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:weight normal :height 96 :width normal :foundry "SRC" :family "Hack")))))
+ )
 
 ;;; Commantary:
 (eval-when-compile
@@ -67,44 +67,38 @@
   :bind ("M-x" . counsel-M-x)
   :config (ivy-mode 1))
 
-(use-package flycheck
- :config (global-flycheck-mode))
-
-(use-package which-key
- :config (which-key-mode 1))
-
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode-on))
-
-(use-package lsp-mode
-  :custom (setq rustic-lsp-server 'rust-analyzer)
-  :init (setq lsp-clients-clangd-args '("--header-insertion-decorators=0" "--enable-config"))
-  :init (setq lsp-keymap-prefix "C-c l")
-  :hook (
-   (go-mode . lsp-deferred)
-   (js-mode . lsp-deferred)
-   (lsp-mode . lsp-enable-which-key-integration))
-  :commands (lsp lsp-deferred)
-  :bind (:map lsp-mode-map (("<tab>" . lsp-execute-code-action))))
-
-(use-package origami)
-(use-package lsp-origami
-  :hook (lsp-mode . lsp-origami-try-enable))
-
-(use-package lsp-ui
-  :commands lsp-ui-mode)
-
-(use-package lsp-ivy
-  :commands lsp-ivy-workspace-symbol)
-
-(use-package which-key
-  :config
-  (which-key-mode))
 
 (use-package rustic
   :ensure
   :config
   (setq rustic-format-on-save t))
+
+(with-eval-after-load 'eglot
+  (add-to-list 'eglot-server-programs
+               '(c++-mode . ("/opt/homebrew/Cellar/llvm/19.1.3/bin/clangd" "--enable-config" "--background-index" "-j" "11"))))
+
+(setq flymake-diagnostic-functions '(eglot-flymake-backend))
+(setq flymake-fringe-indicator-position 'right-fringe)
+
+(setq gptel-model 'deepseek-chat
+      gptel-temperature	0
+      gptel-backend
+      (gptel-make-openai "DeepSeek"
+        :host "api.deepseek.com"
+        :endpoint "/chat/completions"
+        :stream t
+        ;;; api key in ~.autoinfo
+        :key (auth-source-pick-first-password :host "api.deepseek.com")
+        :models '(deepseek-chat)))
+
+(use-package elysium)
+(use-package smerge
+  :ensure nil
+  :hook
+  (c++-mode . smerge-mode))
+  
 
 (provide 'init)
 ;;; init.el ends here
